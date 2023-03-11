@@ -7,10 +7,32 @@ const studentSchema = new Schema({
         type: 'String',
         required: true
     },
-    age: {
+    student_id: {
+        type: "String",
+        required: true
+    },
+    contact: {
         type: 'Number',
         required: true
+    },
+    email: {
+        type: "String",
+        required: false,
+    },
+    status: {
+        type: "Number",
+        required: true
+    },
+    profession: {
+        type: "String",
+        required: false
+    },
+    query: {
+        type: "String",
+        required: false
     }
 }, { timestamps: true })
 
-module.exports = mongoose.model('student', studentSchema)
+
+
+exports.student = mongoose.model('student', studentSchema)

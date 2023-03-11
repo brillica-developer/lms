@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
 
-const { getStudents } = require('../../controllers/visitor.js')
+const { getCoursePage } = require('../../controllers/visitor.js')
 
-router.get("/", getStudents)
+router.get("/courses/:course", getCoursePage)
 
 module.exports = router 

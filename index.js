@@ -1,6 +1,8 @@
 //IMPORTING PACKAGES
 const mongoose = require("mongoose")
 const express = require("express")
+const bodyParser = require("body-parser")
+
 
 const app = express()
 
@@ -10,6 +12,8 @@ const visitorRoutes = require("./routes/visitor/visitor")
 
 //SETTING THINGS UP
 app.set("view engine", 'ejs')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use(express.static('public'))
 
 //USING ROUTES
